@@ -2,7 +2,7 @@
 
 # directories
 SOURCE="FFmpeg"
-FAT="fat-ffmpeg"
+FAT="fat"
 
 SCRATCH="scratch"
 # must be an absolute path

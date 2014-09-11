@@ -6,7 +6,7 @@ ARCHS="arm64 armv7s x86_64 i386 armv7"
 
 # directories
 SOURCE="x264"
-FAT="fat-ffmpeg"
+FAT="fat"
 
 SCRATCH="scratch-x264"
 # must be an absolute path
