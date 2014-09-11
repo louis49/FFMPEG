@@ -18,7 +18,7 @@ cd "$PODS_ROOT"
 echo "$PODS_ROOT"
 rm -rf "fat-x264"
 
-./build-x264.sh arv7s
+./build-x264.sh
 
 rm -rf "x264"
 rm -rf "scratch-x264"
