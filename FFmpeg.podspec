@@ -13,10 +13,16 @@ export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 cd "$PODS_ROOT"
 echo "$PODS_ROOT"
 
+rm -rf "fat-x264"
 rm -rf "fat-ffmpeg"
 
+./build-x264.sh armv7s
 ./build-ffmpeg.sh armv7s
 
+
+rm -rf "x264"
+rm -rf "scratch-x264"
+rm -rf "thin-x264"
 rm -rf "ffmpeg-2.3.3"
 rm -rf "scratch"
 rm -rf "thin"
@@ -24,9 +30,10 @@ CMD
 
 
 s.subspec 'ffmpeg' do |s|
-    s.source_files = 'fat-ffmpeg/include/**/*.h'
-    s.preserve_paths = 'fat-ffmpeg/lib/*.a'
-    s.vendored_libraries = 'fat-ffmpeg/lib/*.a'
+    s.source_files = '**/include/**/*.h'
+    s.preserve_paths = '**/lib/*.a'
+    s.vendored_libraries = '**/lib/*.a'
 end
+
 
 end
