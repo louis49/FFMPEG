@@ -30,9 +30,9 @@ CMD
 
 
 s.subspec 'ffmpeg' do |s|
-    s.source_files = '**/include/**/*.h'
-    s.preserve_paths = '**/lib/*.a'
-    s.vendored_libraries = '**/lib/*.a'
+    s.source_files = 'fat-ffmpeg/include/**/*.h', 'fat-ffmpeg/include/*.h'
+    s.preserve_paths = 'fat-ffmpeg/lib/*.a'
+    s.vendored_libraries = 'fat-ffmpeg/lib/*.a'
 end
 
 
