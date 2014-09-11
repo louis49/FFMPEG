@@ -14,7 +14,7 @@ s.prepare_command = <<-CMD
 
 export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 cd "$PODS_ROOT"
-
+echo "$PODS_ROOT"
 #rm -rf "fat-x264"
 #rm -rf "fat-ffmpeg"
 
