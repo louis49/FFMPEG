@@ -32,8 +32,7 @@ CMD
 
 s.subspec 'x264' do |ss|
     ss.public_header_files = 'fat-x264/include/*.h'
-    ss.vendored_libraries = 'fat-x264/lib/*.a'
-    ss.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264"' }
+    ss.preserve_paths = 'fat-x264/lib/*.a'
 end
 
 
