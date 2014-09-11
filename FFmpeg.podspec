@@ -6,7 +6,7 @@ s.requires_arc = false
 
 s.platform     = :ios
 
-s.default_subspec = 'FFMPEG'
+s.default_subspec = 'x264'
 
 s.prepare_command = <<-CMD
 
@@ -27,13 +27,6 @@ rm -rf "ffmpeg-2.3.3"
 rm -rf "scratch"
 rm -rf "thin"
 CMD
-
-s.subspec 'FFMPEG' do |ss|
-    ss.source_files = 'FFmpeg/fat-ffmpeg/include/*.h'
-    ss.preserve_paths = 'FFmpeg/fat-ffmpeg/lib/*.a'
-    ss.library = 'ffmpeg'
-    ss.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-ffmpeg"' }
-end
 
 s.subspec 'x264' do |ss|
     ss.source_files = 'FFmpeg/fat-x264/include/*.h'
