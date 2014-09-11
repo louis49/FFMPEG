@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-s.name         = "FFmpeg"
+s.name         = "x264"
 s.version      = "2.3.3"
 s.summary      = "FFmpeg static libraries compiled for iOS"
 
