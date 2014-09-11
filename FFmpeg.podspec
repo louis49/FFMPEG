@@ -31,8 +31,8 @@ rm -rf "thin"
 CMD
 
 s.subspec 'x264' do |ss|
-    ss.public_header_files = 'fat-x264/include/*.h'
-    ss.preserve_paths = 'fat-x264/lib/*.a'
+    ss.public_header_files = '**/*.h'
+    ss.preserve_paths = '**/*.a'
 end
 
 
