@@ -31,6 +31,7 @@ CMD
 
 s.public_header_files = '**/*.h'
 s.preserve_paths = '**/*.a'
-
+s.library = 'x264'
+s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' }
 
 end
