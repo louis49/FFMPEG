@@ -8,6 +8,7 @@ s.platform     = :ios
 s.source   = { :git => 'https://github.com/louis49/FFMPEG.git', :tag => '2.3.3' }
 
 s.prepare_command = <<-CMD
+s.default_subspec = 'x264'
 
 export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 cd "$PODS_ROOT"
@@ -27,7 +28,10 @@ rm -rf "scratch"
 rm -rf "thin"
 CMD
 
-s.source_files = '**/*.{h,a}'
-s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' }, { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/include"' }
+s.subspec 'x264' do |s|
+    s.preserve_paths = 'fat-x264/include/*.h'
+    s.vendored_libraries = 'fat-x264/lib/libx264.a'
+    s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' },{ 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/FFmpeg/fat-x264/include/**" }
+end
 
 end
