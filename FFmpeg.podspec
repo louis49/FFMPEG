@@ -29,15 +29,15 @@ rm -rf "thin"
 CMD
 
 s.subspec 'FFMPEG' do |ss|
-    ss.source_files = 'fat-ffmpeg/include/*.h'
-    ss.preserve_paths = 'fat-ffmpeg/lib/*.a'
+    ss.source_files = 'FFmpeg/fat-ffmpeg/include/*.h'
+    ss.preserve_paths = 'FFmpeg/fat-ffmpeg/lib/*.a'
     ss.library = 'ffmpeg'
     ss.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFMPEG/fat-ffmpeg"' }
 end
 
 s.subspec 'x264' do |ss|
-    ss.source_files = 'fat-x264/include/*.h'
-    ss.preserve_paths = 'fat-x264/lib/*.a'
+    ss.source_files = 'FFmpeg/fat-x264/include/*.h'
+    ss.preserve_paths = 'FFmpeg/fat-x264/lib/*.a'
     ss.library = 'x264'
     ss.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/x264/fat-x264"' }
 end
