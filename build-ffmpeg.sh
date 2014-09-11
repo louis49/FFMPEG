@@ -9,7 +9,7 @@ SCRATCH="scratch"
 THIN=`pwd`/"thin"
 
 # absolute path to x264 library
-X264=`pwd`/"fat-ffmpeg"
+X264=`pwd`/"fat"
 
 #FDK_AAC=`pwd`/fdk-aac/fdk-aac-ios
 
