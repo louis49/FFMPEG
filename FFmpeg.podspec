@@ -31,8 +31,8 @@ rm -rf "thin"
 CMD
 
 s.subspec 'x264' do |ss|
-    ss.public_header_files = 'FFmpeg/fat-x264/include/*.h'
-    ss.vendored_libraries = 'FFmpeg/fat-x264/lib/*.a'
+    ss.public_header_files = 'fat-x264/include/*.h'
+    ss.vendored_libraries = 'fat-x264/lib/*.a'
     ss.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264"' }
 end
 
