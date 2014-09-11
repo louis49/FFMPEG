@@ -16,8 +16,8 @@ echo "$PODS_ROOT"
 rm -rf "fat-x264"
 rm -rf "fat-ffmpeg"
 
-./build-x264.sh armv7s
-./build-ffmpeg.sh armv7s
+./build-x264.sh armv7 armv7s
+./build-ffmpeg.sh armv7 armv7s
 
 
 rm -rf "x264"
