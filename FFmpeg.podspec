@@ -8,6 +8,8 @@ s.platform     = :ios
 
 s.default_subspec = 'x264'
 
+s.source   = { :git => 'https://github.com/louis49/FFMPEG.git', :tag => '2.3.3' }
+
 s.prepare_command = <<-CMD
 
 export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
