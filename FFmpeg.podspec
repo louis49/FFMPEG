@@ -6,7 +6,6 @@ s.requires_arc = false
 
 s.platform     = :ios
 
-s.default_subspec = 'x264'
 
 s.source   = { :git => 'https://github.com/louis49/FFMPEG.git', :tag => '2.3.3' }
 
@@ -30,10 +29,8 @@ rm -rf "scratch"
 rm -rf "thin"
 CMD
 
-s.subspec 'x264' do |ss|
-    ss.public_header_files = '**/*.h'
-    ss.preserve_paths = '**/*.a'
-end
+s.public_header_files = '**/*.h'
+s.preserve_paths = '**/*.a'
 
 
 end
