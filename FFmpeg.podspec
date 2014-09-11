@@ -15,15 +15,14 @@ echo "$PODS_ROOT"
 
 rm -rf "fat-ffmpeg"
 
-./build-x264.sh armv7s armv7
-./build-x264.sh lipo
-./build-ffmpeg.sh armv7s armv7
-./build-ffmpeg.sh lipo
 
+./build-x264.sh
 
 rm -rf "x264"
 rm -rf "scratch-x264"
 rm -rf "thin-x264"
+
+./build-ffmpeg.sh
 
 rm -rf "ffmpeg-2.3.3"
 rm -rf "scratch"
