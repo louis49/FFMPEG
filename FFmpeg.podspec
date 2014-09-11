@@ -33,9 +33,9 @@ CMD
 
 
 s.subspec 'x264' do |s|
+    s.source_files = 'fat-x264/include/*.h'
     s.preserve_paths = 'fat-x264/include/*.h'
     s.vendored_libraries = 'fat-x264/lib/libx264.a'
-    s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' },{ 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/FFmpeg/fat-x264/include/**" }
 end
 
 end
