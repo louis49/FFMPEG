@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # directories
-SOURCE="ffmpeg-2.3.3"
+SOURCE="FFmpeg"
 FAT="fat-ffmpeg"
 
 SCRATCH="scratch"
@@ -78,8 +78,7 @@ then
 	if [ ! -r $SOURCE ]
 	then
 		echo 'FFmpeg source not found. Trying to download...'
-		curl http://www.ffmpeg.org/releases/$SOURCE.tar.bz2 | tar xj \
-			|| exit 1
+        git clone https://github.com/FFmpeg/FFmpeg.git
 	fi
 
 	CWD=`pwd`
