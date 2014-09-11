@@ -5,7 +5,7 @@ s.summary      = "FFmpeg static libraries compiled for iOS"
 
 s.platform     = :ios
 
-s.source   = { :git => 'https://github.com/louis49/FFMPEG.git', :tag => '2.3.3' }
+s.source   = { :git => 'https://github.com/louis49/FFMPEG.git'}
 s.default_subspec = 'x264'
 
 
