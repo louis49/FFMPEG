@@ -27,9 +27,7 @@ rm -rf "scratch"
 rm -rf "thin"
 CMD
 
-s.source_files = '**/*.h'
-s.preserve_paths = '**/*.a'
-s.library = 'x264'
-s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' }
+s.source_files = '**/*.{h,a}'
+s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' }, { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/include"' }
 
 end
