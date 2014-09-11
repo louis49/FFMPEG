@@ -2,10 +2,8 @@ Pod::Spec.new do |s|
 s.name         = "FFmpeg"
 s.version      = "2.3.3"
 s.summary      = "FFmpeg static libraries compiled for iOS"
-s.requires_arc = false
 
 s.platform     = :ios
-
 
 s.source   = { :git => 'https://github.com/louis49/FFMPEG.git', :tag => '2.3.3' }
 
@@ -29,7 +27,7 @@ rm -rf "scratch"
 rm -rf "thin"
 CMD
 
-s.public_header_files = '**/*.h'
+s.source_files = '**/*.h'
 s.preserve_paths = '**/*.a'
 s.library = 'x264'
 s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/FFmpeg/fat-x264/lib"' }
