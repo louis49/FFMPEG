@@ -12,7 +12,6 @@ s.prepare_command = <<-CMD
 
 export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 cd "$PODS_ROOT"
-cd FFmpeg-iOS-build-script
 
 #rm -rf "fat-x264"
 #rm -rf "fat-ffmpeg"
