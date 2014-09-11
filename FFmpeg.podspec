@@ -18,8 +18,8 @@ cd "$PODS_ROOT"
 echo "$PODS_ROOT"
 rm -rf "fat-x264"
 rm -rf "fat-ffmpeg"
-./build-x264.sh
-./build-ffmpeg.sh
+./build-x264.sh arv7s
+./build-ffmpeg.sh armv7s
 rm -rf "x264"
 rm -rf "scratch-x264"
 rm -rf "thin-x264"
@@ -29,9 +29,6 @@ rm -rf "thin"
 CMD
 
 
-
-
-
 s.subspec 'x264' do |s|
     s.source_files = 'fat-x264/include/*.h'
     s.preserve_paths = 'fat-x264/lib/libx264.a'
@@ -39,9 +36,9 @@ s.subspec 'x264' do |s|
 end
 
 s.subspec 'ffmpeg' do |s|
-s.source_files = 'fat-ffmpeg/include/**/*.h'
-s.preserve_paths = 'fat-ffmpeg/lib/*.a'
-s.vendored_libraries = 'fat-ffmpeg/lib/*.a'
+    s.source_files = 'fat-ffmpeg/include/**/*.h'
+    s.preserve_paths = 'fat-ffmpeg/lib/*.a'
+    s.vendored_libraries = 'fat-ffmpeg/lib/*.a'
 end
 
 end
