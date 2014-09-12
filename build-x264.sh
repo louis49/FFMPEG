@@ -1,4 +1,5 @@
 #!/bin/sh
+export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 
 CONFIGURE_FLAGS="--enable-static --enable-pic --disable-cli --disable-asm"
 
@@ -93,6 +94,7 @@ fi
 if [ "$LIPO" ]
 then
 	echo "building fat binaries..."
+    rm -rf "$FAT"
 	mkdir -p $FAT/lib
 	set - $ARCHS
 	CWD=`pwd`
@@ -108,3 +110,7 @@ then
 	cp -rf $THIN/$1/include $FAT
 
 fi
+
+rm -rf "$SOURCE"
+rm -rf "$SCRATCH"
+rm -rf "$THIN"

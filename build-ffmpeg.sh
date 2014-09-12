@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
+
 # directories
 SOURCE="FFmpeg"
 FAT="fat"
@@ -150,5 +152,9 @@ then
 	cd $CWD
 	cp -rf $THIN/$1/include $FAT
 fi
+
+rm -rf "$SOURCE"
+rm -rf "$SCRATCH"
+rm -rf "$THIN"
 
 echo Done

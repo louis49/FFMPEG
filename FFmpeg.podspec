@@ -9,24 +9,9 @@ s.source   = { :git => 'https://github.com/louis49/FFMPEG.git'}
 s.default_subspec = 'ffmpeg'
 
 s.prepare_command = <<-CMD
-export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 cd "$PODS_ROOT"
-echo "$PODS_ROOT"
-
-rm -rf "fat-ffmpeg"
-
-
 ./build-x264.sh
-
-rm -rf "x264"
-rm -rf "scratch-x264"
-rm -rf "thin-x264"
-
 ./build-ffmpeg.sh
-
-rm -rf "ffmpeg-2.3.3"
-rm -rf "scratch"
-rm -rf "thin"
 CMD
 
 
