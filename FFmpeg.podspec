@@ -7,7 +7,7 @@ s.platform     = :ios
 
 s.source   = { :git => 'https://github.com/louis49/FFMPEG.git'}
 s.default_subspec = 'ffmpeg'
-s.libraries = 'libiconv.dylib', 'libbz2.dylib', 'libz.dylib'
+s.libraries = 'iconv', 'bz2', 'z'
 
 #s.prepare_command = <<-CMD
 #cd "$PODS_ROOT"
@@ -23,6 +23,7 @@ s.subspec 'ffmpeg' do |s|
     s.frameworks = 'AVFoundation'
     s.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/FFmpeg/fat/include", "LIBRARY_SEARCH_PATHS" => "${PODS_ROOT}/FFmpeg/fat/lib" }
 end
+
 
 
 end
