@@ -24,18 +24,4 @@ s.subspec 'ffmpeg' do |s|
     s.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/FFmpeg/fat/include", "LIBRARY_SEARCH_PATHS" => "${PODS_ROOT}/FFmpeg/fat/lib" }
 end
 
-post_install do |installer|
-default_library = installer.libraries.detect { |i| i.target_definition.name == 'Pods' }
-config_file_path = default_library.library.xcconfig_path
-
-File.open("config.tmp", "w") do |io|
-io << File.read(config_file_path).gsub(/-liconv/, '')
-io << File.read(config_file_path).gsub(/-lbz2/, '')
-io << File.read(config_file_path).gsub(/-lz/, '')
-end
-
-FileUtils.mv("config.tmp", config_file_path)
-end
-
-
 end
