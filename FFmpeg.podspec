@@ -20,7 +20,8 @@ s.subspec 'ffmpeg' do |s|
     s.source_files = 'fat/include/**/*.h', 'fat/include/*.h'
     s.preserve_paths = 'fat/lib/*.a'
     s.vendored_libraries = 'fat/lib/*.a'
-    s.frameworks = 'AVFoundation', 'libiconv.dylib', 'libbz2.dylib', 'libz.dylib'
+    s.libraries = 'libiconv.dylib', 'libbz2.dylib', 'libz.dylib'
+    s.frameworks = 'AVFoundation'
     s.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/FFmpeg/fat/include", "LIBRARY_SEARCH_PATHS" => "${PODS_ROOT}/FFmpeg/fat/lib" }
 end
 
