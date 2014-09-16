@@ -15,7 +15,7 @@ cd "$PODS_ROOT"
 #./build-ffmpeg.sh
 #mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
 
-for f in $(find . -name *.txt);do
+for f in $(find . -name *.h);do
     sed -f $f -i 's/.*#include <time.h>*/#include <libavutil_time.h>./'
 done
 
