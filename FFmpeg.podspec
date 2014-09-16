@@ -16,7 +16,9 @@ cd "$PODS_ROOT"
 #mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
 
 for f in $(find . -name *.h);do
-    sed -f $f -i 's/.*<time.h>*/<libavutil_time.h>./'
+in = '<time.h>'
+out = '<libavutil_time.h>'
+    sed -f $f -i 's/.*$in*/$out./'
 done
 
 CMD
