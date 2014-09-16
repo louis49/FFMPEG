@@ -9,11 +9,12 @@ s.source   = { :git => 'https://github.com/louis49/FFMPEG.git'}
 s.default_subspec = 'ffmpeg'
 s.libraries = 'iconv', 'bz2', 'z'
 
-#s.prepare_command = <<-CMD
-#cd "$PODS_ROOT"
+s.prepare_command = <<-CMD
+cd "$PODS_ROOT"
 #./build-x264.sh
 #./build-ffmpeg.sh
-#CMD
+#mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
+CMD
 
 
 s.subspec 'ffmpeg' do |s|
