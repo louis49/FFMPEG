@@ -18,7 +18,7 @@ cd "$PODS_ROOT"
 for f in $(find . -name *.h);do
 in = '<time.h>'
 out = '<libavutil_time.h>'
-    sed -f $f -i 's/.*$in*/$out./'
+    sed -f $f -i 's/.*"$in"*/"$out"./'
 done
 
 CMD
