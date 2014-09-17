@@ -11,16 +11,16 @@ s.libraries = 'iconv', 'bz2', 'z'
 
 s.prepare_command = <<-CMD
 cd "$PODS_ROOT"
-#./build-x264.sh x86_64 i386
-#./build-x264.sh lipo
-#./build-ffmpeg.sh x86_64 i386
-#./build-ffmpeg.sh lipo
-#mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
+./build-x264.sh x86_64 i386
+./build-x264.sh lipo
+./build-ffmpeg.sh x86_64 i386
+./build-ffmpeg.sh lipo
+mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
 
-#for f in $(find . -name *.h);do
-#echo $f
-#sed -i '' 's/<time.h>/<avutil_time.h>/g' $f
-#done
+for f in $(find . -name *.h);do
+echo $f
+sed -i '' 's/<time.h>/<avutil_time.h>/g' $f
+done
 
 CMD
 
