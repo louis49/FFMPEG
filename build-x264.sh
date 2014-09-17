@@ -111,6 +111,6 @@ then
 
 fi
 
-rm -rf "$SOURCE"
-rm -rf "$SCRATCH"
-rm -rf "$THIN"
+#rm -rf "$SOURCE"
+#rm -rf "$SCRATCH"
+#rm -rf "$THIN"

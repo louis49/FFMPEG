@@ -157,8 +157,8 @@ then
 	cp -rf $THIN/$1/include $FAT
 fi
 
-rm -rf "$SOURCE"
-rm -rf "$SCRATCH"
-rm -rf "$THIN"
+#rm -rf "$SOURCE"
+#rm -rf "$SCRATCH"
+#rm -rf "$THIN"
 
 echo Done
