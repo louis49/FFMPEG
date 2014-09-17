@@ -82,6 +82,7 @@ then
 		echo 'FFmpeg source not found. Trying to download...'
 #git clone https://github.com/FFmpeg/FFmpeg.git
         curl http://www.ffmpeg.org/releases/ffmpeg-2.3.3.tar.bz2 | tar xj \ || exit 1
+        mv ffmpeg-2.3.3 ffmpeg
 	fi
 
 	CWD=`pwd`
