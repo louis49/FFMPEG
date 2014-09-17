@@ -3,7 +3,8 @@ export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 
 CONFIGURE_FLAGS="--enable-static --enable-pic --disable-cli --disable-asm"
 
-ARCHS="arm64 armv7s x86_64 i386 armv7"
+#ARCHS="arm64 armv7s x86_64 i386 armv7"
+ARCHS="x86_64 i386"
 
 # directories
 SOURCE="x264"
