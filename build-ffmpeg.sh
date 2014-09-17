@@ -80,7 +80,8 @@ then
 	if [ ! -r $SOURCE ]
 	then
 		echo 'FFmpeg source not found. Trying to download...'
-        git clone https://github.com/FFmpeg/FFmpeg.git
+#git clone https://github.com/FFmpeg/FFmpeg.git
+        curl http://www.ffmpeg.org/releases/ffmpeg-2.3.3.tar.bz2 | tar xj \ || exit 1
 	fi
 
 	CWD=`pwd`
