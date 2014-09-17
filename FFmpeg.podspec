@@ -17,7 +17,7 @@ mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
 
 for f in $(find . -name *.h);do
 echo $f
-sed -i '' 's/<time.h>/<libavutil_time.h>/g' $f
+sed -i '' 's/<time.h>/<avutil_time.h>/g' $f
 done
 
 CMD
