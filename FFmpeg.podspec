@@ -11,16 +11,16 @@ s.libraries = 'iconv', 'bz2', 'z'
 
 s.prepare_command = <<-CMD
 cd "$PODS_ROOT"
-./build-x264.sh x86_64 i386
-./build-x264.sh lipo
-./build-ffmpeg.sh x86_64 i386
-./build-ffmpeg.sh lipo
-mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
+#./build-x264.sh x86_64 i386
+#./build-x264.sh lipo
+#./build-ffmpeg.sh x86_64 i386
+#./build-ffmpeg.sh lipo
+#mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
 
-for f in $(find . -name *.h);do
-echo $f
-sed -i '' 's/<time.h>/<avutil_time.h>/g' $f
-done
+#for f in $(find . -name *.h);do
+#echo $f
+#sed -i '' 's/<time.h>/<avutil_time.h>/g' $f
+#done
 
 CMD
 
@@ -29,7 +29,7 @@ s.subspec 'ffmpeg' do |s|
     s.source_files = 'fat/include/**/*.h', 'fat/include/*.h'
     s.preserve_paths = 'fat/lib/*.a'
     s.vendored_libraries = 'fat/lib/*.a'
-    s.frameworks = 'AVFoundation'
+    s.frameworks = 'AVFoundation', 'CoreMedia'
     s.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/FFmpeg/fat/include", "LIBRARY_SEARCH_PATHS" => "${PODS_ROOT}/FFmpeg/fat/lib" }
 end
 
