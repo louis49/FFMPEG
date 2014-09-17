@@ -4,6 +4,7 @@ export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 
 # directories
 SOURCE="FFmpeg"
+DL="ffmpeg-2.3.3"
 FAT="fat"
 
 SCRATCH="scratch"
@@ -81,8 +82,9 @@ then
 	then
 		echo 'FFmpeg source not found. Trying to download...'
 #git clone https://github.com/FFmpeg/FFmpeg.git
-        curl http://www.ffmpeg.org/releases/ffmpeg-2.3.3.tar.bz2 | tar xj \ || exit 1
-        mv ffmpeg-2.3.3 ffmpeg
+curl http://www.ffmpeg.org/releases/$DL.tar.bz2 | tar xj \
+|| exit 1
+        mv ffmpeg-2.3.3 FFmpeg
 	fi
 
 	CWD=`pwd`
