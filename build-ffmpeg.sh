@@ -4,7 +4,7 @@ export PATH=/opt/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/bin
 
 # directories
 SOURCE="FFmpeg"
-DL="ffmpeg-2.3.3"
+#DL="ffmpeg-2.3.3"
 FAT="fat"
 
 SCRATCH="scratch"
@@ -17,7 +17,7 @@ X264=`pwd`/"fat"
 #FDK_AAC=`pwd`/fdk-aac/fdk-aac-ios
 
 CONFIGURE_FLAGS="--enable-cross-compile --disable-debug --disable-programs \
-                 --disable-doc --enable-pic"
+                 --disable-doc"
 
 if [ "$X264" ]
 then
@@ -32,8 +32,8 @@ fi
 # avresample
 #CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
-#ARCHS="arm64 armv7s armv7 x86_64 i386"
-ARCHS="x86_64 i386"
+ARCHS="arm64 armv7s armv7 x86_64 i386"
+#ARCHS="x86_64 i386"
 
 COMPILE="y"
 LIPO="y"
@@ -82,10 +82,10 @@ then
 	if [ ! -r $SOURCE ]
 	then
 		echo 'FFmpeg source not found. Trying to download...'
-#git clone https://github.com/FFmpeg/FFmpeg.git
-curl http://www.ffmpeg.org/releases/$DL.tar.bz2 | tar xj \
-|| exit 1
-        mv ffmpeg-2.3.3 FFmpeg
+git clone https://github.com/FFmpeg/FFmpeg.git
+#curl http://www.ffmpeg.org/releases/$DL.tar.bz2 | tar xj \
+#|| exit 1
+#        mv ffmpeg-2.3.3 FFmpeg
 	fi
 
 	CWD=`pwd`
@@ -158,8 +158,8 @@ then
 	cp -rf $THIN/$1/include $FAT
 fi
 
-#rm -rf "$SOURCE"
-#rm -rf "$SCRATCH"
-#rm -rf "$THIN"
+rm -rf "$SOURCE"
+rm -rf "$SCRATCH"
+rm -rf "$THIN"
 
 echo Done
