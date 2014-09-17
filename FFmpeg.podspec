@@ -13,12 +13,11 @@ s.prepare_command = <<-CMD
 cd "$PODS_ROOT"
 #./build-x264.sh
 #./build-ffmpeg.sh
-#mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
+mv fat/include/libavutil/time.h fat/include/libavutil/avutil_time.h
 
 for f in $(find . -name *.h);do
-in = '<time.h>'
-out = '<libavutil_time.h>'
-    sed -f $f -i 's/.*"$in"*/"$out"./'
+echo $f
+sed -i '' 's/<time.h>/<libavutil_time.h>/g' $f
 done
 
 CMD
